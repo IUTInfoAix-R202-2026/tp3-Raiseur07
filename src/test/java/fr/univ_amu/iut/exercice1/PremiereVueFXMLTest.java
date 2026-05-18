@@ -32,7 +32,6 @@ class PremiereVueFXMLTest {
 
   // --- Étape 1 : la fenêtre est affichée ---
 
-  @Disabled("Retire cette annotation pour activer le test")
   @Test
   @Order(1)
   void la_fenetre_de_la_vue_fxml_est_visible(FxRobot robot) {
@@ -76,18 +75,15 @@ class PremiereVueFXMLTest {
   @Test
   @Order(5)
   void le_label_de_bienvenue_est_affiche_dans_la_vue(FxRobot robot) {
-    Label titre =
-        (Label)
-            robot
-                .lookup(
-                    node ->
-                        node instanceof Label labelNode
-                            && labelNode.getText() != null
-                            && labelNode.getText().contains("Bienvenue"))
-                .queryAll()
-                .stream()
-                .findFirst()
-                .orElse(null);
+    Label titre = (Label) robot
+        .lookup(
+            node -> node instanceof Label labelNode
+                && labelNode.getText() != null
+                && labelNode.getText().contains("Bienvenue"))
+        .queryAll()
+        .stream()
+        .findFirst()
+        .orElse(null);
 
     assertThat(titre)
         .as("un Label contenant 'Bienvenue' doit être présent dans la vue FXML")

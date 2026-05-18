@@ -34,11 +34,16 @@ public class PremiereVueFXML extends Application {
     //    Le fichier vit à côté de cette classe (même paquetage fr.univ_amu.iut.exercice1).
     //    Utiliser getClass().getResource("PremiereVueFXML.fxml") - JavaFX trouvera le
     //    fichier en cherchant dans le paquetage courant.
+    getClass().getResource("PremiereVueFXML.fxml");
     //
     // 2. Appeler FXMLLoader.load(url) qui retourne un Parent (ici un BorderPane).
     //
+    FXMLLoader.load(url);
     // 3. Créer une Scene avec ce Parent et la donner à primaryStage.
     //
+    setScene(...);
     // 4. Ajouter un titre et show().
+    setTitle(PVFXML);
+    show();
   }
 }
